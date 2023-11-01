@@ -88,20 +88,20 @@ function WineStatistics({dataset}) {
           <tr>
             <td>Flavanoids Mean</td>
             {Object.entries(mean).map(([key, value]) => (
-              <td key={key}>{value.toFixed(2)}</td>
+              <td key={key}>{value.toFixed(3)}</td>
             ))}
           </tr>
           <tr>
             <td>Flavanoids Median</td>
             {Object.entries(median).map(([key, value]) => (
-              <td key={key}>{value.toFixed(2)}</td>
+              <td key={key}>{value.toFixed(3)}</td>
             ))}
           </tr>
           <tr>
             
             <td>Flavanoids Mode</td>
             {Object.entries(mode).map(([key, value]) => (
-              <td key={key}>{value.map(i=><td className="mode_column">{i}</td>)}</td>
+              <td key={key}>{value.map(i=><td className="mode_column">{i.toFixed(3)}</td>)}</td>
             ))}
             
           </tr>

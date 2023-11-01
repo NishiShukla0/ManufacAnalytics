@@ -21,12 +21,14 @@ function Gamma({ dataset }) {
         classGamma[alcohol] = [+gamma];
       }
     }
+    console.log("gamma property", classGamma);
     var mean = calculateMeanGamma();
     setGammaMean(mean);
     var median = calculateMedianGamma();
     setGammaMedian(median);
     var mode = calculateModeGamma();
     setGammaMode(mode);
+    console.log(mode);
   }, [GammaMean, GammaMode, GammaMedian]);
 
   const calculateMeanGamma = () => {
@@ -91,13 +93,13 @@ function Gamma({ dataset }) {
           <tr>
             <td>Gamma Mean</td>
             {Object.entries(GammaMean).map(([key, value]) => (
-              <td key={key}>{value.toFixed(2)}</td>
+              <td key={key}>{value.toFixed(3)}</td>
             ))}
           </tr>
           <tr>
             <td>Gamma Median</td>
             {Object.entries(GammaMedian).map(([key, value]) => (
-              <td key={key}>{value.toFixed(2)}</td>
+              <td key={key}>{value.toFixed(3)}</td>
             ))}
           </tr>
           <tr>
@@ -105,7 +107,7 @@ function Gamma({ dataset }) {
             {Object.entries(GammaMode).map(([key, value]) => (
               <td key={key}>
                 {value.map((i) => (
-                  <td className="mode_column">{i}</td>
+                  <td className="mode_column">{i.toFixed(3)}</td>
                 ))}
               </td>
             ))}
